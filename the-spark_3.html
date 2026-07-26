@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Spark — Jonathan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F4E9;
+    --ink:#26301F;
+    --ink-soft:#4E5643;
+    --forest:#2F5D46;
+    --ember:#C08A3E;
+    --ember-glow:rgba(222,168,92,.38);
+    --sage:#7C8464;
+    --hairline:#E7DFCB;
+    --display:'Fraunces', Georgia, serif;
+    --body:'Newsreader', Georgia, serif;
+    --utility:'Inter', -apple-system, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:1.175rem;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px 96px;}
+
+  /* ---------- hero ---------- */
+  header{padding:88px 0 56px;text-align:center;}
+  .eyebrow{
+    font-family:var(--utility);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--sage);
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:clamp(3rem, 9vw, 4.6rem);
+    letter-spacing:-.015em;
+    margin:20px 0 8px;
+    line-height:1.05;
+    color:var(--forest);
+  }
+  .spark-dot{
+    display:inline-block;
+    width:.42em;height:.42em;
+    background:var(--ember);
+    border-radius:50%;
+    margin-left:.12em;
+    box-shadow:0 0 18px 6px var(--ember-glow);
+    animation:breathe 4s ease-in-out infinite;
+    transform:translateY(-.08em);
+  }
+  @keyframes breathe{
+    0%,100%{box-shadow:0 0 14px 4px var(--ember-glow);}
+    50%{box-shadow:0 0 26px 9px var(--ember-glow);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .spark-dot{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+  .dek{
+    font-family:var(--body);
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--ink-soft);
+    max-width:32ch;
+    margin:18px auto 0;
+    line-height:1.5;
+  }
+  .byline{
+    font-family:var(--utility);
+    font-size:.8rem;
+    font-weight:500;
+    letter-spacing:.08em;
+    color:var(--sage);
+    margin-top:30px;
+  }
+  .byline span{color:var(--ember);}
+  .rule{
+    border:none;
+    border-top:1px solid var(--hairline);
+    margin:56px auto;
+    width:120px;
+  }
+
+  /* ---------- prose ---------- */
+  p{margin-bottom:1.35em;}
+  .intro p:first-of-type::first-letter{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:3.4em;
+    float:left;
+    line-height:.82;
+    padding:.06em .12em 0 0;
+    color:var(--ember);
+  }
+  em{font-style:italic;}
+
+  /* ---------- gems ---------- */
+  .gem{margin-top:72px;}
+  .gem-label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:var(--utility);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-bottom:10px;
+  }
+  .gem-label::before{
+    content:'';
+    width:7px;height:7px;
+    background:var(--ember);
+    border-radius:50%;
+    box-shadow:0 0 8px 2px var(--ember-glow);
+    flex:none;
+  }
+  .gem h2{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:1.85rem;
+    letter-spacing:-.01em;
+    margin-bottom:.65em;
+    line-height:1.2;
+    color:var(--forest);
+  }
+  .takeaway{
+    font-style:italic;
+    color:var(--ink-soft);
+    border-left:2px solid var(--forest);
+    padding-left:18px;
+    margin:1.6em 0 0;
+  }
+
+  /* ---------- pull quote ---------- */
+  blockquote{
+    font-family:var(--display);
+    font-weight:400;
+    font-size:1.45rem;
+    line-height:1.45;
+    color:var(--ink);
+    text-align:center;
+    max-width:34ch;
+    margin:2.2em auto;
+  }
+  blockquote footer{
+    font-family:var(--utility);
+    font-size:.75rem;
+    font-weight:500;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-top:1.1em;
+  }
+
+  /* ---------- closing ---------- */
+  .closing{margin-top:80px;}
+  .signoff{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:1.5rem;
+    margin-top:2em;
+  }
+  .signoff small{
+    display:block;
+    font-family:var(--utility);
+    font-weight:500;
+    font-size:.75rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin-top:8px;
+  }
+  @media (max-width:520px){
+    body{font-size:1.08rem;}
+    header{padding:64px 0 40px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">A farewell note, of sorts</div>
+  <h1>The Spark<span class="spark-dot" aria-hidden="true"></span></h1>
+  <p class="dek">Eight small gems from sixteen months I never planned for.</p>
+</header>
+
+<hr class="rule">
+
+<section class="intro">
+  <p>In August 2024, at a point in my life where I was busiest — juggling my career, caring for my father, and a house move — I was diagnosed with cancer. What followed was around eight months of chemotherapy and radiotherapy, and then a slower, quieter chapter of gaining my element back over time. I'm very grateful to say I've recently found out that I've been in remission since December 2025.</p>
+  <p>Before any of that, I was a fairly simple man chasing one particular thing: I wanted to understand what it meant to be a strong person. I was a bit of a workaholic, driven from milestone to milestone, and deep down I hated the idea of pausing my life for anything. So when life paused it for me, I had a choice — resent the interruption, or treat it as a classroom. I decided that this chapter had lessons waiting for me, and my job was to extract the gems sitting in front of me.</p>
+  <p>Before I leave, I wanted to share those gems with you. Not the medical story — the human one. Take whatever is useful, and leave the rest.</p>
+</section>
+
+<div class="gem">
+  <div class="gem-label">Gem 01</div>
+  <h2>The game of comparison</h2>
+  <p>I used to struggle to stay in my own lane. I knew comparison was a thief, but knowing it and living it are two different things. I'd scroll LinkedIn, see someone land a brilliant role, and quietly wish things would swing my way a little sooner. I used to see those people as the "gems" — the ones with everything going for them.</p>
+  <p>That perspective changed almost immediately once treatment began — in the cancer ward, of all places, somewhere I never expected to find teachers. The true gems, I learned, live in the grey areas — the people whose stories go unheard, the ones you'd never cross paths with unless life arranged it. I met people of every age in that ward, and each of them handed me a spark of wisdom; their memories slowly became memories of my own. The one who inspired me most was a nine-year-old girl named Susie, living with stage four cancer. I remember walking over intending to lift her spirits. She ended up lifting mine. Imagine that.</p>
+  <p class="takeaway">Walk through life with an open heart and learn from every corner of it — especially the corners you'd never think to look in. Otherwise you'll miss the opportunities standing right in front of you.</p>
+</div>
+
+<div class="gem">
+  <div class="gem-label">Gem 02</div>
+  <h2>Whose life is harder?</h2>
+  <p>In my quieter hours I'd sit with difficult questions, and this was one of the hardest: whose life is actually harder? Picture two men. One lives in a first-world country; his main battle is climbing the corporate ladder, wrestling with problems of the luxurious kind. The other lives somewhere like Syria or Yemen; his sole mission each day is finding food for himself and his donkey. Take a moment with that before reading on.</p>
+  <p>The answer I eventually landed on is that there's no black-and-white answer — both carry real hardship. But the more interesting question is what happens <em>after</em> each of them overcomes their obstacle. Who do they credit for the victory? For me, as a person of faith, every win belongs to something far greater than myself. However you frame it, the principle holds: take a step back with each victory you receive — a great job, a kind word about your work — and hold it with gratitude and humility rather than ownership. It's the surest guard against arrogance I know.</p>
+</div>
+
+<div class="gem">
+  <div class="gem-label">Gem 03</div>
+  <h2>Remove the ceiling</h2>
+  <p>This one might be a no-brainer for most people, but I genuinely struggled with it: I used to put a ceiling on what I'd hope for. I'd hold back on my biggest asks of life, worried I was overreaching. Once I finally sought advice and let that ceiling go, something shifted. The more openly I hoped, the more clearly I could see the next step forward — and the higher the potential I saw in myself.</p>
+  <p class="takeaway">Don't shrink your hopes to a "reasonable" size. Aim without limits, stay humble about the results, and be as generous in giving as you are bold in asking.</p>
+</div>
+
+<div class="gem">
+  <div class="gem-label">Gem 04</div>
+  <h2>Keeping the spark lit</h2>
+  <p>Like anyone, I'd have my lows — moments where I'd lose my spark completely. I built little systems to keep myself going, like regularly attending talks that fired me up. But the two things that genuinely moved the needle were these.</p>
+  <p>First: bravery. Never be shy of asking questions. I used to worry about sounding stupid in front of others, and it cost me. Ask anyway.</p>
+  <p>Second: if life ever feels like it's moving impossibly fast — like you're sleepwalking through the same day on repeat, and the past few years feel like one long copy-paste — the cure is to create new memories — to learn how to create new opportunities out of thin air, using the creativity each of us already carries. A new café. A new face. A new skill. A different sunset spot. Novelty is what slows time down.</p>
+</div>
+
+<div class="gem">
+  <div class="gem-label">Gem 05</div>
+  <h2>The sweetness of your emotions</h2>
+  <p>There's a scary side to becoming desensitised — feeling less than you should in moments that deserve to be felt. I carried a particular misunderstanding for years: that feeling <em>nothing</em> was the same as being strong. It isn't. Our emotions are among the most important elements of who we are — both a gift and a challenge.</p>
+  <p class="takeaway">The better you understand what you feel and why, the more you can transmute it into wisdom for your next step — no matter the hardship in front of you.</p>
+</div>
+
+<div class="gem">
+  <div class="gem-label">Gem 06</div>
+  <h2>You can have fun at all times</h2>
+  <p>This might be a hot take, but hear me out. I thrive most when I'm genuinely having fun — and, funnily enough, my time dealing with cancer was some of the most fun I'd had in years. At one point I met a psychologist through a youth cancer program, and she told me, more or less word for word: "I don't think you need anything from me — whatever you're doing seems to be working great for you." (For the record, it was my faith and my mum's example. My mother taught me this lesson better than anyone, mostly by laughing her way through everything. I miss her, and I hope her lessons reach the world one day.)</p>
+  <p>There is beauty in every situation, as long as finding beauty is genuinely your focus. My favourite illustration comes from among the great scholars of Islamic history — figures like Hasan Al-Basri, Imam Al-Ghazali, and Ibn Taymiyyah. The last of these, a 14th-century scholar, spent much of his life imprisoned for refusing to abandon his convictions. Asked what his enemies could possibly do to him, his answer was essentially this:</p>
+  <blockquote>
+    "My paradise and my garden are in my heart wherever I go. If I am imprisoned, it is seclusion. If I am killed, it is martyrdom. If I am exiled, it is adventure."
+    <footer>Ibn Taymiyyah</footer>
+  </blockquote>
+  <p class="takeaway">Contentment built from within travels with you everywhere. And you get to pave that pathway with your own individual story — you are something special too.</p>
+</div>
+
+<div class="gem">
+  <div class="gem-label">Gem 07</div>
+  <h2>Change wrestling partners</h2>
+  <p>Remember that chase I mentioned — wanting to understand what it means to be strong? Somewhere along the way it went stagnant. Every milestone I hit just looped me back to the same question: <em>am I finally strong enough?</em> It was a great catalyst for starting my journey, but a poor compass for continuing it.</p>
+  <p>I realised that no matter how much control you have over yourself (or think you have), strength alone still leaves you prone to losing your way. So I picked a better pursuit: becoming a lifelong seeker of knowledge and wisdom. I'll admit I can be a hypocrite and slack off at times — but the direction matters.</p>
+  <p class="takeaway">When you feel you've grasped everything a pursuit can teach you, don't keep circling it out of habit. Reassess, and choose a better "wrestling partner" for the next round.</p>
+</div>
+
+<div class="gem">
+  <div class="gem-label">Gem 08</div>
+  <h2>Rock bottom</h2>
+  <p>This is my last gem, and possibly my favourite. When you go through real hardship, you can feel displaced within yourself — like losing a safety net you didn't realise you were standing on. We all draw our sense of security from something: wealth, friends, family, health, a career. Hardship has a way of showing you which of those are temporary, and what actually remains when they're stripped away. For me, that permanent foundation is my faith; for you it may be something else — but I'd encourage everyone to find out what theirs is <em>before</em> life asks the question for them.</p>
+  <p>What I felt is only a fraction of what many people around the world live with constantly. I'm grateful to have felt even that portion — and my heart goes out to everyone still at rock bottom.</p>
+</div>
+
+<hr class="rule">
+
+<section class="closing">
+  <p>A couple of months ago, I found out I'd beaten cancer, and I made sure to celebrate properly with my loved ones. When they congratulated me, my honest answer was that I couldn't take the credit — I owe everything to something far greater than myself, and to the people who carried me through it.</p>
+  <p>To my colleagues: thank you. For the support, the laughs, and the banter over these years — it meant more than you know. If you're ever losing your spirit, please take the time to learn and understand yourself fully, keep your spark lit, and find joy along every step of the way.</p>
+  <p class="signoff">— Jonathan<small>With gratitude, always</small></p>
+</section>
+
+</div>
+</body>
+</html>
