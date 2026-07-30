@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
 <title>The Spark — Jonathan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
+    color-scheme: light only;
     --paper:#F8F4E9;
     --ink:#26301F;
     --ink-soft:#4E5643;
@@ -147,6 +150,52 @@
     margin:1.6em 0 0;
   }
 
+  /* ---------- photos ---------- */
+  figure{margin:2.4em 0 2.6em;}
+  figure img{
+    width:100%;
+    display:block;
+    border-radius:12px;
+    border:1px solid var(--hairline);
+  }
+  figcaption{
+    font-family:var(--body);
+    font-style:italic;
+    font-weight:500;
+    font-size:1.15rem;
+    color:var(--ink);
+    text-align:center;
+    max-width:46ch;
+    margin:16px auto 0;
+    line-height:1.55;
+  }
+  figure.photo-small img{
+    max-width:min(400px, 100%);
+    margin:0 auto;
+  }
+  .photo-pair{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+  }
+  .photo-pair-mixed{
+    display:grid;
+    grid-template-columns:36fr 64fr;
+    gap:14px;
+    align-items:start;
+  }
+  .photo-pair-mixed img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:12px;
+    border:1px solid var(--hairline);
+  }
+  .photo-pair img{height:100%;object-fit:cover;}
+  @media (max-width:520px){
+    .photo-pair{grid-template-columns:1fr;}
+  }
+
   /* ---------- pull quote ---------- */
   blockquote{
     font-family:var(--display);
@@ -207,6 +256,10 @@
   <p>In August 2024, at a point in my life where I was busiest — juggling my career, caring for my father, and a house move — I was diagnosed with cancer. What followed was around eight months of chemotherapy and radiotherapy, and then a slower, quieter chapter of gaining my element back over time. I'm very grateful to say I've recently found out that I've been in remission since December 2025.</p>
   <p>Before any of that, I was a fairly simple man chasing one particular thing: I wanted to understand what it meant to be a strong person. I was a bit of a workaholic, driven from milestone to milestone, and deep down I hated the idea of pausing my life for anything. So when life paused it for me, I had a choice — resent the interruption, or treat it as a classroom. I decided that this chapter had lessons waiting for me, and my job was to extract the gems sitting in front of me.</p>
   <p>Before I leave, I wanted to share those gems with you. Not the medical story — the human one. Take whatever is useful, and leave the rest.</p>
+  <figure class="photo-small">
+    <img src="photo-treatment.jpg" alt="Jonathan taking a mirror selfie during a treatment session, IV line in hand">
+    <figcaption>“Funnily enough, this is the only photo I took during chemotherapy. I guess it wasn’t so bad after all?”</figcaption>
+  </figure>
 </section>
 
 <div class="gem">
@@ -250,7 +303,12 @@
   <div class="gem-label">Gem 06</div>
   <h2>You can have fun at all times</h2>
   <p>This might be a hot take, but hear me out. I thrive most when I'm genuinely having fun — and, funnily enough, my time dealing with cancer was some of the most fun I'd had in years. At one point I met a psychologist through a youth cancer program, and she told me, more or less word for word: "I don't think you need anything from me — whatever you're doing seems to be working great for you." (For the record, it was my faith and my mum's example. My mother taught me this lesson better than anyone, mostly by laughing her way through everything. I miss her, and I hope her lessons reach the world one day.)</p>
-  <p>There is beauty in every situation, as long as finding beauty is genuinely your focus. My favourite illustration comes from among the great scholars of Islamic history — figures like Hasan Al-Basri, Imam Al-Ghazali, and Ibn Taymiyyah. The last of these, a 14th-century scholar, spent much of his life imprisoned for refusing to abandon his convictions. Asked what his enemies could possibly do to him, his answer was essentially this:</p>
+  <p>There is beauty in every situation, as long as finding beauty is genuinely your focus.</p>
+  <figure class="photo-small">
+    <img src="photo-olivia.jpg" alt="Jonathan smiling beside his young niece Olivia, who is proudly holding up a drawing she made of the two of them">
+    <figcaption>“Here’s my lovely niece, her name’s Olivia. She drew a picture of us to keep me motivated!”</figcaption>
+  </figure>
+  <p>My favourite illustration comes from among the great scholars of Islamic history — figures like Hasan Al-Basri, Imam Al-Ghazali, and Ibn Taymiyyah. The last of these, a 14th-century scholar, spent much of his life imprisoned for refusing to abandon his convictions. Asked what his enemies could possibly do to him, his answer was essentially this:</p>
   <blockquote>
     "My paradise and my garden are in my heart wherever I go. If I am imprisoned, it is seclusion. If I am killed, it is martyrdom. If I am exiled, it is adventure."
     <footer>Ibn Taymiyyah</footer>
@@ -276,7 +334,23 @@
 <hr class="rule">
 
 <section class="closing">
-  <p>A couple of months ago, I found out I'd beaten cancer, and I made sure to celebrate properly with my loved ones. When they congratulated me, my honest answer was that I couldn't take the credit — I owe everything to something far greater than myself, and to the people who carried me through it.</p>
+  <p>Once I found out I'd beaten cancer, I made sure to celebrate properly with my loved ones. When they congratulated me, my honest answer was that I couldn't take the credit — I owe everything to something far greater than myself, and to the people who carried me through it.</p>
+  <figure>
+    <div class="photo-pair-mixed">
+      <img src="photo-summit.jpg" alt="A large group of friends and family gathered on the rocky summit of Mount Kosciuszko while Jonathan holds up an 'I Beat Cancer' plate">
+      <img src="photo-kosciuszko-mates.jpg" alt="Jonathan and five mates grinning in a summit selfie on Mount Kosciuszko, holding the 'I Beat Cancer' plate">
+    </div>
+    <figcaption>“Here’s when I hiked Mount Kosciusko the very day after finishing radiotherapy with my friends. To be honest, I'm not sure how I'm still here after that.”</figcaption>
+  </figure>
+  <figure>
+    <img src="photo-horses.jpg" alt="Jonathan and two friends kneeling in a golden New Zealand field in front of grazing horses and mountains, holding the 'I Beat Cancer' plate">
+    <div class="photo-pair" style="margin-top:14px;">
+      <img src="photo-nz-ridge.jpg" alt="A lone hiker celebrating with raised arms on a ridgeline lookout above Lake Wanaka in New Zealand">
+      <img src="photo-lake.jpg" alt="Jonathan standing ankle-deep in a turquoise alpine lake beneath a mountain wall, holding the 'I Beat Cancer' plate">
+    </div>
+    <figcaption>“Here’s when I decided to step it up a notch and go hiking around New Zealand too. I love that place. Shortly after, I came back to Sydney and hesitantly opened my laptop to work again.”</figcaption>
+  </figure>
+  <p>As for what comes next, I’ve learned to simplify my intention: to be better at everything I do. To improve skill-wise and seek knowledge, become fitter and healthier, be a great listener to people in need, and to always stay open to reassessment.</p>
   <p>To my colleagues: thank you. For the support, the laughs, and the banter over these years — it meant more than you know. If you're ever losing your spirit, please take the time to learn and understand yourself fully, keep your spark lit, and find joy along every step of the way.</p>
   <p class="signoff">— Jonathan<small>With gratitude, always</small></p>
 </section>
